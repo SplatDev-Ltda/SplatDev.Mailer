@@ -1,0 +1,37 @@
+c:\users\carlos.casalicchio\documents\visual studio 2015\Projects\Simple Mail\Simple Email Website\bin\roslyn\csc.exe
+c:\users\carlos.casalicchio\documents\visual studio 2015\Projects\Simple Mail\Simple Email Website\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+c:\users\carlos.casalicchio\documents\visual studio 2015\Projects\Simple Mail\Simple Email Website\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+c:\users\carlos.casalicchio\documents\visual studio 2015\Projects\Simple Mail\Simple Email Website\bin\roslyn\Microsoft.CodeAnalysis.dll
+c:\users\carlos.casalicchio\documents\visual studio 2015\Projects\Simple Mail\Simple Email Website\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+c:\users\carlos.casalicchio\documents\visual studio 2015\Projects\Simple Mail\Simple Email Website\bin\roslyn\Microsoft.CSharp.Core.targets
+c:\users\carlos.casalicchio\documents\visual studio 2015\Projects\Simple Mail\Simple Email Website\bin\roslyn\Microsoft.VisualBasic.Core.targets
+c:\users\carlos.casalicchio\documents\visual studio 2015\Projects\Simple Mail\Simple Email Website\bin\roslyn\System.Collections.Immutable.dll
+c:\users\carlos.casalicchio\documents\visual studio 2015\Projects\Simple Mail\Simple Email Website\bin\roslyn\System.Reflection.Metadata.dll
+c:\users\carlos.casalicchio\documents\visual studio 2015\Projects\Simple Mail\Simple Email Website\bin\roslyn\vbc.exe
+c:\users\carlos.casalicchio\documents\visual studio 2015\Projects\Simple Mail\Simple Email Website\bin\roslyn\VBCSCompiler.exe
+c:\users\carlos.casalicchio\documents\visual studio 2015\Projects\Simple Mail\Simple Email Website\bin\roslyn\VBCSCompiler.exe.config
+c:\users\carlos.casalicchio\documents\visual studio 2015\Projects\Simple Mail\Simple Email Website\bin\Simple Email Website.dll.config
+c:\users\carlos.casalicchio\documents\visual studio 2015\Projects\Simple Mail\Simple Email Website\bin\Simple Email Website.dll
+c:\users\carlos.casalicchio\documents\visual studio 2015\Projects\Simple Mail\Simple Email Website\bin\Simple Email Website.pdb
+c:\users\carlos.casalicchio\documents\visual studio 2015\Projects\Simple Mail\Simple Email Website\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+c:\users\carlos.casalicchio\documents\visual studio 2015\Projects\Simple Mail\Simple Email Website\bin\Microsoft.Web.Infrastructure.dll
+c:\users\carlos.casalicchio\documents\visual studio 2015\Projects\Simple Mail\Simple Email Website\bin\Simple Mail.dll
+c:\users\carlos.casalicchio\documents\visual studio 2015\Projects\Simple Mail\Simple Email Website\bin\System.Web.Helpers.dll
+c:\users\carlos.casalicchio\documents\visual studio 2015\Projects\Simple Mail\Simple Email Website\bin\System.Web.Mvc.dll
+c:\users\carlos.casalicchio\documents\visual studio 2015\Projects\Simple Mail\Simple Email Website\bin\System.Web.Razor.dll
+c:\users\carlos.casalicchio\documents\visual studio 2015\Projects\Simple Mail\Simple Email Website\bin\System.Web.Webpages.Deployment.dll
+c:\users\carlos.casalicchio\documents\visual studio 2015\Projects\Simple Mail\Simple Email Website\bin\System.Web.Webpages.dll
+c:\users\carlos.casalicchio\documents\visual studio 2015\Projects\Simple Mail\Simple Email Website\bin\System.Web.Webpages.Razor.dll
+c:\users\carlos.casalicchio\documents\visual studio 2015\Projects\Simple Mail\Simple Email Website\bin\Simple Mail.pdb
+c:\users\carlos.casalicchio\documents\visual studio 2015\Projects\Simple Mail\Simple Email Website\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+c:\users\carlos.casalicchio\documents\visual studio 2015\Projects\Simple Mail\Simple Email Website\bin\System.Web.Razor.xml
+c:\users\carlos.casalicchio\documents\visual studio 2015\Projects\Simple Mail\Simple Email Website\bin\System.Web.Webpages.xml
+c:\users\carlos.casalicchio\documents\visual studio 2015\Projects\Simple Mail\Simple Email Website\bin\System.Web.Webpages.Deployment.xml
+c:\users\carlos.casalicchio\documents\visual studio 2015\Projects\Simple Mail\Simple Email Website\bin\System.Web.Webpages.Razor.xml
+c:\users\carlos.casalicchio\documents\visual studio 2015\Projects\Simple Mail\Simple Email Website\bin\System.Web.Helpers.xml
+c:\users\carlos.casalicchio\documents\visual studio 2015\Projects\Simple Mail\Simple Email Website\bin\System.Web.Mvc.xml
+c:\users\carlos.casalicchio\documents\visual studio 2015\Projects\Simple Mail\Simple Email Website\obj\Debug\Simple Email Website.csprojResolveAssemblyReference.cache
+c:\users\carlos.casalicchio\documents\visual studio 2015\Projects\Simple Mail\Simple Email Website\obj\Debug\Simple Email Website.dll
+c:\users\carlos.casalicchio\documents\visual studio 2015\Projects\Simple Mail\Simple Email Website\obj\Debug\Simple Email Website.pdb
+c:\users\carlos.casalicchio\documents\visual studio 2015\Projects\Simple Mail\Simple Email Website\bin\Newtonsoft.Json.dll
+c:\users\carlos.casalicchio\documents\visual studio 2015\Projects\Simple Mail\Simple Email Website\bin\Newtonsoft.Json.xml

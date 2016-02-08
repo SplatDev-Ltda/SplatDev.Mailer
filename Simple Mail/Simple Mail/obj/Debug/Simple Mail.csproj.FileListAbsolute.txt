@@ -1,0 +1,8 @@
+c:\users\carlos.casalicchio\documents\visual studio 2015\Projects\Simple Mail\Simple Mail\bin\Debug\Simple Mail.dll.config
+c:\users\carlos.casalicchio\documents\visual studio 2015\Projects\Simple Mail\Simple Mail\bin\Debug\Simple Mail.dll
+c:\users\carlos.casalicchio\documents\visual studio 2015\Projects\Simple Mail\Simple Mail\bin\Debug\Simple Mail.pdb
+c:\users\carlos.casalicchio\documents\visual studio 2015\Projects\Simple Mail\Simple Mail\obj\Debug\Simple Mail.csprojResolveAssemblyReference.cache
+c:\users\carlos.casalicchio\documents\visual studio 2015\Projects\Simple Mail\Simple Mail\obj\Debug\Simple Mail.dll
+c:\users\carlos.casalicchio\documents\visual studio 2015\Projects\Simple Mail\Simple Mail\obj\Debug\Simple Mail.pdb
+c:\users\carlos.casalicchio\documents\visual studio 2015\Projects\Simple Mail\Simple Mail\bin\Debug\Newtonsoft.Json.dll
+c:\users\carlos.casalicchio\documents\visual studio 2015\Projects\Simple Mail\Simple Mail\bin\Debug\Newtonsoft.Json.xml
