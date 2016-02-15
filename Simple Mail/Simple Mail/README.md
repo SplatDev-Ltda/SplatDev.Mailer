@@ -40,3 +40,6 @@ Or instanciate the module via code:
                     }
                 }
                 
+
+To test emails locally use
+[Smtp4Dev](https://smtp4dev.codeplex.com/)
