@@ -92,6 +92,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ajax-loader.gif" />
     <Content Include="Email Templates\default.html" />
     <Content Include="Email Templates\share.html" />
     <Content Include="Global.asax" />

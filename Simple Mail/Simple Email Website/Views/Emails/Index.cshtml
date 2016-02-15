@@ -9,26 +9,28 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Send Email</title>
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="http://cdn.jsdelivr.net/highlight.js/9.1.0/highlight.min.js"></script>
+    <link rel="stylesheet" href="http://cdn.jsdelivr.net/highlight.js/9.1.0/styles/default.min.css">
+    <title>Send Email DEMO</title>
     <style>
         body {
             font-family: 'Segoe UI';
-            background: #92c7e2;
+            background: #adad85;
         }
 
         .form-horizontal {
-            width: 250px;
-            height: 350px;
+            width: 60%;
+            min-height: 90vh;
             margin: 0 auto;
             background-color: #fff;
             opacity: 0.9;
-            border-radius: 20px;
-            box-shadow: 0 0 20px #000;
+            box-shadow: 0 0 4px #000;
             padding: 20px;
         }
 
         form {
-            width: 200px;
+            width: 100%;
             margin: 0 auto;
             text-align: left;
         }
@@ -45,12 +47,12 @@
         }
 
         textarea {
-            height: 80px !important;
+            height: 120px !important;
         }
 
         .btn {
             margin-top: 30px;
-            width: 100%;
+            width: 120px;
         }
 
         h4 {
@@ -60,15 +62,20 @@
         }
 
         .alert {
-            width: 100% height: 32px;
+            width: 90%;
+            height: 32px;
             line-height: 32px;
             text-align: left;
             padding: 0 15px;
             border-radius: 5px;
             display: none;
-            font-size: 10px;
+            font-size: 14px;
+            font-weight: 800;
         }
 
+        .loading {
+            display: none;
+        }
 
         .alert-success {
             background-color: #00ff90;
@@ -82,6 +89,12 @@
             border: 1px solid #ff0000;
             color: #ffffff;
             display: block !important;
+        }
+
+        .clearfix {
+            clear: both;
+            float: none;
+            margin: 5px;
         }
     </style>
 </head>
@@ -99,34 +112,80 @@
             <h4>Send an Email</h4>
 
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            <div class="form-group">
-                @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", placeholder = "your address" } })
-                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            <div class="row">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", placeholder = "your address" } })
+                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                    </div>
                 </div>
-            </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Message, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.TextAreaFor(model => model.Message, new { htmlAttributes = new { @class = "form-control", rows = 20, columns = 20, plagenolder = "your message" } })
+                        @Html.ValidationMessageFor(model => model.Message, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="button" value="Send" class="btn btn-default" /> <img src="~/ajax-loader.gif" title="sending.." class="loading" />
+                        <div class="clearfix"></div>
+                        <div class="alert"></div>
+                    </div>
+                </div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.Message, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.TextAreaFor(model => model.Message, new { htmlAttributes = new { @class = "form-control", rows = 20, columns = 20, plagenolder = "your message" } })
-                    @Html.ValidationMessageFor(model => model.Message, "", new { @class = "text-danger" })
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="button" value="Send" class="btn btn-default" />
-                    <br />
-                    <div class="alert"></div>
-                </div>
+                <h1>Simple Mail Module</h1>
+                Use it to create a simple Smtp module that sends html emails
+                <br />
+                <a href="https://github.com/ccasalicchio/Smtp-Module" target="_blank">GitHub</a>
+                <ul>
+                    <li>
+                        Either use a config file (app.config/web.config)<br />
+
+                        <pre><code class="xml">
+            &lt;appSettings&gt;
+                &lt;!--email provider section--&gt;
+                &lt;add key="siteadmin" value="postmaster@simpleemail.com" /&gt;
+                &lt;add key="email-subject" value="Email from Email Website" /&gt;
+                &lt;add key="email-from" value="postmaster@puul.ga" /&gt;
+                &lt;add key="email-from-name" value="Simple Email" /&gt;
+                &lt;add key="email-require-auth" value="false" /&gt;
+                &lt;add key="email-username" value="simpleemail" /&gt;
+                &lt;add key="email-password" value="" /&gt;
+                &lt;add key="email-port" value="3535" /&gt;
+                &lt;add key="useSSL" value="false" /&gt;
+                &lt;add key="email-server" value="localhost" /&gt;
+                &lt;add key="email-html-share" value="~/Email Templates/share.html" /&gt;
+                &lt;add key="email-html-default" value="~/Email Templates/default.html" /&gt;
+                &lt;add key="email-html-forgotten" value="~/Email Templates/default.html" /&gt;
+                &lt;add key="email-html-confirmation" value="~/Email Templates/default.html" /&gt;
+                &lt;add key="email-html-welcome" value="~/Email Templates/default.html" /&gt;
+            &lt;/appSettings&gt;
+            </code></pre>
+                    </li>
+                    <li>
+                        Or instanciate the module via code:
+                        <pre><code class="csharp">
+                using Simple_Mail;
+                namespace Example{
+                        public class Test() {
+                            Email email = new Email(smtpServer, smtpPort, useAuth, username, password,  useSSL);
+                        }
+                    }
+                }
+                </code></pre>
+                    </li>
+                </ul>
             </div>
         </div>
     }
 
     <script type="text/javascript">
         (function () {
+            hljs.initHighlightingOnLoad();
             $(".btn").click(function () {
+                $(".loading").show();
                 $.ajax({
                     url: "/Emails/SendEmail",
                     data: $("#Email,#Message").serialize()
@@ -136,6 +195,7 @@
                         var alert = $(".alert");
                         alert.removeClass("alert-failure").addClass("alert-success");
                         alert.html(parsed_data.Message);
+                        $(".loading").fadeOut();
                     } else {
                         var alert = $(".alert");
                         alert.removeClass("alert-success").addClass("alert-failure");
