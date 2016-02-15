@@ -35,3 +35,4 @@ c:\users\carlos.casalicchio\documents\visual studio 2015\Projects\Simple Mail\Si
 c:\users\carlos.casalicchio\documents\visual studio 2015\Projects\Simple Mail\Simple Email Website\obj\Debug\Simple Email Website.pdb
 c:\users\carlos.casalicchio\documents\visual studio 2015\Projects\Simple Mail\Simple Email Website\bin\Newtonsoft.Json.dll
 c:\users\carlos.casalicchio\documents\visual studio 2015\Projects\Simple Mail\Simple Email Website\bin\Newtonsoft.Json.xml
+C:\Users\Carlos.Casalicchio\Downloads\Simple Email Module\Simple Mail\Simple Email Website\obj\Debug\Simple Email Website.csprojResolveAssemblyReference.cache

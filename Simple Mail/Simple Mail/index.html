@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Simple Email Module</title>
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="http://cdn.jsdelivr.net/highlight.js/9.1.0/highlight.min.js"></script>
+    <link rel="stylesheet" href="http://cdn.jsdelivr.net/highlight.js/9.1.0/styles/default.min.css">
+    <style>
+        body {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        footer {
+            position: absolute;
+            bottom: 5px;
+            left: 20px;
+        }
+
+        section {
+            margin: 30px auto;
+        }
+
+        ul {
+            margin: 30px;
+            width: 60%;
+        }
+    </style>
+</head>
+<body>
+    <section>
+
+        <h1>Simple Mail Module</h1>
+        Use it to create a simple Smtp module that sends html emails
+        <br />
+        <a href="https://github.com/ccasalicchio/Smtp-Module" target="_blank">GitHub</a>
+        <ul>
+            <li>
+                Either use a config file (app.config/web.config)<br />
+
+                <pre><code class="xml">
+            &lt;appSettings&gt;
+                &lt;!--email provider section--&gt;
+                &lt;add key="siteadmin" value="postmaster@simpleemail.com" /&gt;
+                &lt;add key="email-subject" value="Email from Email Website" /&gt;
+                &lt;add key="email-from" value="postmaster@puul.ga" /&gt;
+                &lt;add key="email-from-name" value="Simple Email" /&gt;
+                &lt;add key="email-require-auth" value="false" /&gt;
+                &lt;add key="email-username" value="simpleemail" /&gt;
+                &lt;add key="email-password" value="" /&gt;
+                &lt;add key="email-port" value="3535" /&gt;
+                &lt;add key="useSSL" value="false" /&gt;
+                &lt;add key="email-server" value="localhost" /&gt;
+                &lt;add key="email-html-share" value="~/Email Templates/share.html" /&gt;
+                &lt;add key="email-html-default" value="~/Email Templates/default.html" /&gt;
+                &lt;add key="email-html-forgotten" value="~/Email Templates/default.html" /&gt;
+                &lt;add key="email-html-confirmation" value="~/Email Templates/default.html" /&gt;
+                &lt;add key="email-html-welcome" value="~/Email Templates/default.html" /&gt;
+            &lt;/appSettings&gt;
+            </code></pre>
+            </li>
+            <li>
+                Or instanciate the module via code:
+                <pre><code class="csharp">
+                using Simple_Mail;
+                namespace Example{
+                        public class Test() {
+                            Email email = new Email(smtpServer, smtpPort, useAuth, username, password,  useSSL);
+                        }
+                    }
+                }
+                </code></pre>
+            </li>
+        </ul>
+    </section>
+    <script>
+        $(function () {
+
+            hljs.initHighlightingOnLoad();
+
+        });
+    </script>
+</body>
+</html>

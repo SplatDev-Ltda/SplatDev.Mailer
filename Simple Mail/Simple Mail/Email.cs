@@ -6,6 +6,10 @@ using System.Web.Hosting;
 
 namespace Simple_Mail
 {
+    #region Enums
+    /// <summary>
+    /// Types of Emails that can be sent
+    /// </summary>
     public enum EmailType
     {
         Default,
@@ -14,39 +18,144 @@ namespace Simple_Mail
         Welcome,
         Error
     }
+    /// <summary>
+    /// Type of Application this module is being ran from
+    /// </summary>
     public enum ApplicationType
     {
         Desktop,
         Web
     }
+    #endregion
+
+    #region Class
+    /// <summary>
+    /// Email Module Class
+    /// </summary>
     public class Email
     {
-        public string SITE_ADMIN { get; private set; }
-        public string SUBJECT { get; private set; }
+        #region Public Members
+        // <summary>
+        /// The Email address of the Email Module Admin
+        /// </summary>
+        public string SITE_ADMIN { get; set; }
+        /// <summary>
+        /// Subject of the Email
+        /// </summary>
+        public string SUBJECT { get; set; }
+        /// <summary>
+        /// Body of the Email (default is html)
+        /// </summary>
         public string BODY { get; set; }
-        public string FROM { get; private set; }
-        public string FROM_NAME { get; private set; }
+        /// <summary>
+        /// From Email Address (who's sending the email)
+        /// </summary>
+        public string FROM { get; set; }
+        /// <summary>
+        /// From Name (name of who is sending the email)
+        /// </summary>
+        public string FROM_NAME { get; set; }
+        /// <summary>
+        /// To Email Address (who is going to receive this email)
+        /// </summary>
         public string TO { get; private set; }
+        /// <summary>
+        /// To Name (name of who is going to receive this email)
+        /// </summary>
         public string TO_NAME { get; set; }
+        /// <summary>
+        /// Username of Smtp Service / Server
+        /// </summary>
         public string USERNAME { get; private set; }
+        /// <summary>
+        /// Password for the smtp service / server
+        /// </summary>
         public string PASSWORD { get; private set; }
+        /// <summary>
+        /// The port number for sending the email address (normal ports are 25, 587, 465)
+        /// </summary>
         public int PORT { get; private set; }
+        /// <summary>
+        /// Whether to use SSL Encryption
+        /// </summary>
         public bool USESSL { get; private set; }
+        /// <summary>
+        /// Uri of the Smtp Server
+        /// </summary>
         public string SERVER { get; private set; }
+        /// <summary>
+        /// Whether the smtp server requires authentication
+        /// </summary>
         public bool REQUIREAUTH { get; private set; }
-        public string WEBSITE_NAME { get; private set; }
+        /// <summary>
+        /// Name of the Website or App running the Module
+        /// </summary>
+        public string WEBSITE_NAME { get; set; }
+        /// <summary>
+        /// Default Html Body for the Email
+        /// </summary>
         public string HTML_DEFAULT { get; private set; }
+        /// <summary>
+        /// Html body for the Forgotten Email
+        /// </summary>
         public string HTML_FORGOTEN { get; private set; }
+        /// <summary>
+        /// Html Body for the Confirmation Email
+        /// </summary>
         public string HTML_CONFIRMATION { get; private set; }
+        /// <summary>
+        /// Html Body for the Welcome Email
+        /// </summary>
         public string HTML_WELCOME { get; private set; }
+        /// <summary>
+        /// Html for the Social Share
+        /// </summary>
         public string HTML_SHARE_PATH { get; private set; }
+        /// <summary>
+        /// Path for the Default Html File
+        /// </summary>
         public string HTML_DEFAULT_PATH { get; private set; }
+        /// <summary>
+        /// Path for the Forgotten Html File
+        /// </summary>
         public string HTML_FORGOTEN_PATH { get; private set; }
+        /// <summary>
+        /// Path for the Confirmation Html File
+        /// </summary>
         public string HTML_CONFIRMATION_PATH { get; private set; }
+        /// <summary>
+        /// Path for the Welcome Html File
+        /// </summary>
         public string HTML_WELCOME_PATH { get; private set; }
+        /// <summary>
+        /// Path for the Social Share Html File
+        /// </summary>
         public string HTML_SHARE { get; private set; }
+        #endregion
 
-
+        #region Constructors
+        /// <summary>
+        /// Manually configures a Smtp Server Instance (when you do not want to use config files)
+        /// </summary>
+        /// <param name="smtpServer">The Uri for the smtp server</param>
+        /// <param name="smtpPort">The Smtp Port</param>
+        /// <param name="useAuth">Whether the Smtp Server Requires Authentication</param>
+        /// <param name="username">The Smtp Username</param>
+        /// <param name="password">The Smtp Password</param>
+        /// <param name="useSSL">Whether to Use SSL Encryption</param>
+        public Email(string smtpServer, int smtpPort, bool useAuth = false, string username = "", string password = "", bool useSSL = false)
+        {
+            SERVER = smtpServer;
+            PORT = smtpPort;
+            REQUIREAUTH = useAuth;
+            USERNAME = username;
+            PASSWORD = password;
+            USESSL = useSSL;
+        }
+        /// <summary>
+        /// Instanciates a new Email Module based on Config Files and Application Type (Web or Desktop)
+        /// </summary>
+        /// <param name="type"></param>
         public Email(ApplicationType type)
         {
             switch (type)
@@ -68,7 +177,7 @@ namespace Simple_Mail
                 default:
                     break;
             }
-            
+
 
             HTML_CONFIRMATION = GetEmailHtml(HTML_CONFIRMATION_PATH);
             HTML_WELCOME = GetEmailHtml(HTML_DEFAULT_PATH);
@@ -98,10 +207,20 @@ namespace Simple_Mail
 
         }
 
+        #endregion
+
+        #region Private Members
+
         private EmailType emailMessageType;
         private string emailMessageHtml;
         private System.Net.Mail.SmtpClient SmtpServer;
+        #endregion
 
+        #region Private Methods
+        private string GetEmailHtml(string path)
+        {
+            return File.ReadAllText(path);
+        }
 
         private string GetEmailFilePath(EmailType type)
         {
@@ -128,7 +247,7 @@ namespace Simple_Mail
             return emailMessageHtml;
         }
 
-        public bool SetupServer()
+        private bool SetupServer()
         {
             try
             {
@@ -153,6 +272,19 @@ namespace Simple_Mail
                 return false;
             }
         }
+
+        #endregion
+
+        #region Public Methods
+        /// <summary>
+        /// Attempts to send an email
+        /// </summary>
+        /// <param name="type">The Type of Email Being Sent</param>
+        /// <param name="custom">Whether to Customize the email</param>
+        /// <param name="body">If customized, set the html body for the email</param>
+        /// <param name="To">If customized, defines the TO field</param>
+        /// <param name="ToName">If customized, defines the To name</param>
+        /// <returns>Returns a KeyValuePair<bool,string> with success (true/false) and a message from the smtp server</returns>
         public KeyValuePair<bool, string> SendMail(EmailType type, bool custom = false, string body = "", string To = "", string ToName = "New Member")
         {
 
@@ -194,14 +326,16 @@ namespace Simple_Mail
             else return new KeyValuePair<bool, string>(false, "Error Setting UP Email");
 
         }
+        /// <summary>
+        /// Manually Sets the Body for the Email Message
+        /// </summary>
+        /// <param name="message">The Html Body for the Email</param>
         public void SetBody(string message)
         {
             BODY = message;
         }
-        private string GetEmailHtml(string path)
-        {
-            return File.ReadAllText(path);
-        }
-    }
+        #endregion
 
+    } 
+    #endregion
 }

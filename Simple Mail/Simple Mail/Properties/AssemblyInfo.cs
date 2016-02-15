@@ -5,10 +5,10 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Simple Mail")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Simple Mail Module")]
+[assembly: AssemblyDescription("A simple SMTP Module for sending emails")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("zuEuz Tecnologia e Negocios Ltda - ME")]
 [assembly: AssemblyProduct("Simple Mail")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
