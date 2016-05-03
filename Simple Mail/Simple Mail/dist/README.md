@@ -1,14 +1,15 @@
-# Smtp Module
+# Smtp Gun Module
 
 It works with both Desktop and Web applications. It makes it simpler to send email without having all the work of setting it all up.
 
 A small Smtp Email Module for sending emails via website using html templates
 
 Make sure to check the web.config to change basic settings of the module.
-Simple Mail Module
 
 Use it to create a simple Smtp module that sends html emails 
-GitHub
+
+[GitHub](https://github.com/ccasalicchio/Smtp-Module) Page
+
 Either use a config file (app.config/web.config)
 
             <appSettings>
@@ -35,8 +36,11 @@ Or instanciate the module via code:
                 using Simple_Mail;
                 namespace Example{
                         public class Test() {
-                            Email email = new Email(smtpServer, smtpPort, useAuth, username, password,  useSSL);
+                            Message email = new Message(smtpServer, smtpPort, useAuth, username, password,  useSSL);
                         }
                     }
                 }
                 
+
+To test emails locally use
+[Smtp4Dev](https://smtp4dev.codeplex.com/)
