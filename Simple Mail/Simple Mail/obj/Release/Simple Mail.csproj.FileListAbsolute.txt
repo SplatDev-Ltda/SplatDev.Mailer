@@ -5,11 +5,11 @@ C:\Users\Carlos.Casalicchio\Downloads\Simple Email Module\Simple Mail\Simple Mai
 C:\Users\Carlos.Casalicchio\Downloads\Simple Email Module\Simple Mail\Simple Mail\obj\Release\Simple Mail.csprojResolveAssemblyReference.cache
 C:\Users\Carlos.Casalicchio\Downloads\Simple Email Module\Simple Mail\Simple Mail\obj\Release\zuEuz.SimpleMailModule.dll
 C:\Users\Carlos.Casalicchio\Downloads\Simple Email Module\Simple Mail\Simple Mail\obj\Release\zuEuz.SimpleMailModule.pdb
-C:\Users\Carlos.Casalicchio\Source\Repos\Smtp-Module\Simple Mail\Simple Mail\bin\Release\zuEuz.SimpleMailModule.dll.config
-C:\Users\Carlos.Casalicchio\Source\Repos\Smtp-Module\Simple Mail\Simple Mail\bin\Release\zuEuz.SimpleMailModule.XML
-C:\Users\Carlos.Casalicchio\Source\Repos\Smtp-Module\Simple Mail\Simple Mail\bin\Release\zuEuz.SimpleMailModule.dll
-C:\Users\Carlos.Casalicchio\Source\Repos\Smtp-Module\Simple Mail\Simple Mail\bin\Release\zuEuz.SimpleMailModule.pdb
 C:\Users\Carlos.Casalicchio\Source\Repos\Smtp-Module\Simple Mail\Simple Mail\bin\Release\Newtonsoft.Json.dll
 C:\Users\Carlos.Casalicchio\Source\Repos\Smtp-Module\Simple Mail\Simple Mail\bin\Release\Newtonsoft.Json.xml
-C:\Users\Carlos.Casalicchio\Source\Repos\Smtp-Module\Simple Mail\Simple Mail\obj\Release\zuEuz.SimpleMailModule.dll
-C:\Users\Carlos.Casalicchio\Source\Repos\Smtp-Module\Simple Mail\Simple Mail\obj\Release\zuEuz.SimpleMailModule.pdb
+C:\Users\Carlos.Casalicchio\Source\Repos\Smtp-Module\Simple Mail\Simple Mail\bin\Release\zuEuz.Smtp.Gun.dll.config
+C:\Users\Carlos.Casalicchio\Source\Repos\Smtp-Module\Simple Mail\Simple Mail\bin\Release\zuEuz.Smtp.Gun.xml
+C:\Users\Carlos.Casalicchio\Source\Repos\Smtp-Module\Simple Mail\Simple Mail\bin\Release\zuEuz.Smtp.Gun.dll
+C:\Users\Carlos.Casalicchio\Source\Repos\Smtp-Module\Simple Mail\Simple Mail\bin\Release\zuEuz.Smtp.Gun.pdb
+C:\Users\Carlos.Casalicchio\Source\Repos\Smtp-Module\Simple Mail\Simple Mail\obj\Release\zuEuz.Smtp.Gun.dll
+C:\Users\Carlos.Casalicchio\Source\Repos\Smtp-Module\Simple Mail\Simple Mail\obj\Release\zuEuz.Smtp.Gun.pdb

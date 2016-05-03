@@ -1,141 +1,141 @@
 <?xml version="1.0"?>
 <doc>
     <assembly>
-        <name>zuEuz.SimpleMailModule</name>
+        <name>zuEuz.Smtp.Gun</name>
     </assembly>
     <members>
-        <member name="T:Simple_Mail.EmailType">
+        <member name="T:zuEuz.Smtp.Gun.MessageType">
             <summary>
             Types of Emails that can be sent
             </summary>
         </member>
-        <member name="T:Simple_Mail.ApplicationType">
+        <member name="T:zuEuz.Smtp.Gun.ApplicationType">
             <summary>
             Type of Application this module is being ran from
             </summary>
         </member>
-        <member name="T:Simple_Mail.Email">
+        <member name="T:zuEuz.Smtp.Gun.Message">
             <summary>
             Email Module Class
             </summary>
         </member>
-        <!-- Badly formed XML comment ignored for member "P:Simple_Mail.Email.SITE_ADMIN" -->
-        <member name="P:Simple_Mail.Email.SUBJECT">
+        <!-- Badly formed XML comment ignored for member "P:zuEuz.Smtp.Gun.Message.SITE_ADMIN" -->
+        <member name="P:zuEuz.Smtp.Gun.Message.SUBJECT">
             <summary>
             Subject of the Email
             </summary>
         </member>
-        <member name="P:Simple_Mail.Email.BODY">
+        <member name="P:zuEuz.Smtp.Gun.Message.BODY">
             <summary>
             Body of the Email (default is html)
             </summary>
         </member>
-        <member name="P:Simple_Mail.Email.FROM">
+        <member name="P:zuEuz.Smtp.Gun.Message.FROM">
             <summary>
             From Email Address (who's sending the email)
             </summary>
         </member>
-        <member name="P:Simple_Mail.Email.FROM_NAME">
+        <member name="P:zuEuz.Smtp.Gun.Message.FROM_NAME">
             <summary>
             From Name (name of who is sending the email)
             </summary>
         </member>
-        <member name="P:Simple_Mail.Email.TO">
+        <member name="P:zuEuz.Smtp.Gun.Message.TO">
             <summary>
             To Email Address (who is going to receive this email)
             </summary>
         </member>
-        <member name="P:Simple_Mail.Email.TO_NAME">
+        <member name="P:zuEuz.Smtp.Gun.Message.TO_NAME">
             <summary>
             To Name (name of who is going to receive this email)
             </summary>
         </member>
-        <member name="P:Simple_Mail.Email.USERNAME">
+        <member name="P:zuEuz.Smtp.Gun.Message.USERNAME">
             <summary>
             Username of Smtp Service / Server
             </summary>
         </member>
-        <member name="P:Simple_Mail.Email.PASSWORD">
+        <member name="P:zuEuz.Smtp.Gun.Message.PASSWORD">
             <summary>
             Password for the smtp service / server
             </summary>
         </member>
-        <member name="P:Simple_Mail.Email.PORT">
+        <member name="P:zuEuz.Smtp.Gun.Message.PORT">
             <summary>
             The port number for sending the email address (normal ports are 25, 587, 465)
             </summary>
         </member>
-        <member name="P:Simple_Mail.Email.USESSL">
+        <member name="P:zuEuz.Smtp.Gun.Message.USESSL">
             <summary>
             Whether to use SSL Encryption
             </summary>
         </member>
-        <member name="P:Simple_Mail.Email.SERVER">
+        <member name="P:zuEuz.Smtp.Gun.Message.SERVER">
             <summary>
             Uri of the Smtp Server
             </summary>
         </member>
-        <member name="P:Simple_Mail.Email.REQUIREAUTH">
+        <member name="P:zuEuz.Smtp.Gun.Message.REQUIREAUTH">
             <summary>
             Whether the smtp server requires authentication
             </summary>
         </member>
-        <member name="P:Simple_Mail.Email.WEBSITE_NAME">
+        <member name="P:zuEuz.Smtp.Gun.Message.WEBSITE_NAME">
             <summary>
             Name of the Website or App running the Module
             </summary>
         </member>
-        <member name="P:Simple_Mail.Email.HTML_DEFAULT">
+        <member name="P:zuEuz.Smtp.Gun.Message.HTML_DEFAULT">
             <summary>
             Default Html Body for the Email
             </summary>
         </member>
-        <member name="P:Simple_Mail.Email.HTML_FORGOTEN">
+        <member name="P:zuEuz.Smtp.Gun.Message.HTML_FORGOTEN">
             <summary>
             Html body for the Forgotten Email
             </summary>
         </member>
-        <member name="P:Simple_Mail.Email.HTML_CONFIRMATION">
+        <member name="P:zuEuz.Smtp.Gun.Message.HTML_CONFIRMATION">
             <summary>
             Html Body for the Confirmation Email
             </summary>
         </member>
-        <member name="P:Simple_Mail.Email.HTML_WELCOME">
+        <member name="P:zuEuz.Smtp.Gun.Message.HTML_WELCOME">
             <summary>
             Html Body for the Welcome Email
             </summary>
         </member>
-        <member name="P:Simple_Mail.Email.HTML_SHARE_PATH">
+        <member name="P:zuEuz.Smtp.Gun.Message.HTML_SHARE_PATH">
             <summary>
             Html for the Social Share
             </summary>
         </member>
-        <member name="P:Simple_Mail.Email.HTML_DEFAULT_PATH">
+        <member name="P:zuEuz.Smtp.Gun.Message.HTML_DEFAULT_PATH">
             <summary>
             Path for the Default Html File
             </summary>
         </member>
-        <member name="P:Simple_Mail.Email.HTML_FORGOTEN_PATH">
+        <member name="P:zuEuz.Smtp.Gun.Message.HTML_FORGOTEN_PATH">
             <summary>
             Path for the Forgotten Html File
             </summary>
         </member>
-        <member name="P:Simple_Mail.Email.HTML_CONFIRMATION_PATH">
+        <member name="P:zuEuz.Smtp.Gun.Message.HTML_CONFIRMATION_PATH">
             <summary>
             Path for the Confirmation Html File
             </summary>
         </member>
-        <member name="P:Simple_Mail.Email.HTML_WELCOME_PATH">
+        <member name="P:zuEuz.Smtp.Gun.Message.HTML_WELCOME_PATH">
             <summary>
             Path for the Welcome Html File
             </summary>
         </member>
-        <member name="P:Simple_Mail.Email.HTML_SHARE">
+        <member name="P:zuEuz.Smtp.Gun.Message.HTML_SHARE">
             <summary>
             Path for the Social Share Html File
             </summary>
         </member>
-        <member name="M:Simple_Mail.Email.#ctor(System.String,System.Int32,System.Boolean,System.String,System.String,System.Boolean)">
+        <member name="M:zuEuz.Smtp.Gun.Message.#ctor(System.String,System.Int32,System.Boolean,System.String,System.String,System.Boolean)">
             <summary>
             Manually configures a Smtp Server Instance (when you do not want to use config files)
             </summary>
@@ -146,14 +146,14 @@
             <param name="password">The Smtp Password</param>
             <param name="useSSL">Whether to Use SSL Encryption</param>
         </member>
-        <member name="M:Simple_Mail.Email.#ctor(Simple_Mail.ApplicationType)">
+        <member name="M:zuEuz.Smtp.Gun.Message.#ctor(zuEuz.Smtp.Gun.ApplicationType)">
             <summary>
             Instanciates a new Email Module based on Config Files and Application Type (Web or Desktop)
             </summary>
             <param name="type"></param>
         </member>
-        <!-- Badly formed XML comment ignored for member "M:Simple_Mail.Email.SendMail(Simple_Mail.EmailType,System.Boolean,System.String,System.String,System.String)" -->
-        <member name="M:Simple_Mail.Email.SetBody(System.String)">
+        <!-- Badly formed XML comment ignored for member "M:zuEuz.Smtp.Gun.Message.SendMail(zuEuz.Smtp.Gun.MessageType,System.Boolean,System.String,System.String,System.String)" -->
+        <member name="M:zuEuz.Smtp.Gun.Message.SetBody(System.String)">
             <summary>
             Manually Sets the Body for the Email Message
             </summary>

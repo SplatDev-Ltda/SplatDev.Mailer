@@ -23,9 +23,6 @@ C:\Users\Carlos.Casalicchio\Source\Repos\Smtp-Module\Simple Mail\Simple Email We
 C:\Users\Carlos.Casalicchio\Source\Repos\Smtp-Module\Simple Mail\Simple Email Website\bin\System.Web.Webpages.Deployment.dll
 C:\Users\Carlos.Casalicchio\Source\Repos\Smtp-Module\Simple Mail\Simple Email Website\bin\System.Web.Webpages.dll
 C:\Users\Carlos.Casalicchio\Source\Repos\Smtp-Module\Simple Mail\Simple Email Website\bin\System.Web.Webpages.Razor.dll
-C:\Users\Carlos.Casalicchio\Source\Repos\Smtp-Module\Simple Mail\Simple Email Website\bin\zuEuz.SimpleMailModule.dll
-C:\Users\Carlos.Casalicchio\Source\Repos\Smtp-Module\Simple Mail\Simple Email Website\bin\zuEuz.SimpleMailModule.pdb
-C:\Users\Carlos.Casalicchio\Source\Repos\Smtp-Module\Simple Mail\Simple Email Website\bin\zuEuz.SimpleMailModule.xml
 C:\Users\Carlos.Casalicchio\Source\Repos\Smtp-Module\Simple Mail\Simple Email Website\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\Carlos.Casalicchio\Source\Repos\Smtp-Module\Simple Mail\Simple Email Website\bin\Newtonsoft.Json.xml
 C:\Users\Carlos.Casalicchio\Source\Repos\Smtp-Module\Simple Mail\Simple Email Website\bin\System.Web.Razor.xml
@@ -37,3 +34,6 @@ C:\Users\Carlos.Casalicchio\Source\Repos\Smtp-Module\Simple Mail\Simple Email We
 C:\Users\Carlos.Casalicchio\Source\Repos\Smtp-Module\Simple Mail\Simple Email Website\obj\Release\Simple Email Website.csprojResolveAssemblyReference.cache
 C:\Users\Carlos.Casalicchio\Source\Repos\Smtp-Module\Simple Mail\Simple Email Website\obj\Release\Simple Email Website.dll
 C:\Users\Carlos.Casalicchio\Source\Repos\Smtp-Module\Simple Mail\Simple Email Website\obj\Release\Simple Email Website.pdb
+C:\Users\Carlos.Casalicchio\Source\Repos\Smtp-Module\Simple Mail\Simple Email Website\bin\zuEuz.Smtp.Gun.dll
+C:\Users\Carlos.Casalicchio\Source\Repos\Smtp-Module\Simple Mail\Simple Email Website\bin\zuEuz.Smtp.Gun.pdb
+C:\Users\Carlos.Casalicchio\Source\Repos\Smtp-Module\Simple Mail\Simple Email Website\bin\zuEuz.Smtp.Gun.xml

@@ -7,8 +7,8 @@
     <ProjectGuid>{E1AA431D-4783-4247-9326-21FFC57027CA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Simple_Mail</RootNamespace>
-    <AssemblyName>zuEuz.SimpleMailModule</AssemblyName>
+    <RootNamespace>zuEuz.Smtp.Gun</RootNamespace>
+    <AssemblyName>zuEuz.Smtp.Gun</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -28,7 +28,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\zuEuz.SimpleMailModule.XML</DocumentationFile>
+    <DocumentationFile>bin\Release\zuEuz.Smtp.Gun.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">

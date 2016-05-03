@@ -33,7 +33,7 @@ Either use a config file (app.config/web.config)
             
 Or instanciate the module via code:
 
-                using Simple_Mail;
+                using zuEuz.Smtp.Gun;
                 namespace Example{
                         public class Test() {
                             Message email = new Message(smtpServer, smtpPort, useAuth, username, password,  useSSL);
@@ -41,6 +41,15 @@ Or instanciate the module via code:
                     }
                 }
                 
+Or via application type
+
+                using zuEuz.Smtp.Gun;
+                namespace Example{
+                        public class Test() {
+                            Message email = new Message(ApplicationType.Web|ApplicationType.Desktop);
+                        }
+                    }
+                }
 
 To test emails locally use
 [Smtp4Dev](https://smtp4dev.codeplex.com/)

@@ -63,10 +63,12 @@
             <li>
                 Or instanciate the module via code:
                 <pre><code class="csharp">
-                using Simple_Mail;
+                using zuEuz.Smtp.Gun;
                 namespace Example{
                         public class Test() {
                             Message email = new Message(smtpServer, smtpPort, useAuth, username, password,  useSSL);
+                            //or via
+                            Message email = new Message(ApplicationType.Web|ApplicationType.Desktop);
                         }
                     }
                 }
