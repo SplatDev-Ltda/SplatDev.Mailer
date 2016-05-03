@@ -4,13 +4,13 @@ using System.Configuration;
 using System.IO;
 using System.Web.Hosting;
 
-namespace Simple_Mail
+namespace zuEuz.Smtp.Gun
 {
     #region Enums
     /// <summary>
     /// Types of Emails that can be sent
     /// </summary>
-    public enum EmailType
+    public enum MessageType
     {
         Default,
         Confirmation,
@@ -32,7 +32,7 @@ namespace Simple_Mail
     /// <summary>
     /// Email Module Class
     /// </summary>
-    public class Email
+    public class Message
     {
         #region Public Members
         // <summary>
@@ -143,7 +143,7 @@ namespace Simple_Mail
         /// <param name="username">The Smtp Username</param>
         /// <param name="password">The Smtp Password</param>
         /// <param name="useSSL">Whether to Use SSL Encryption</param>
-        public Email(string smtpServer, int smtpPort, bool useAuth = false, string username = "", string password = "", bool useSSL = false)
+        public Message(string smtpServer, int smtpPort, bool useAuth = false, string username = "", string password = "", bool useSSL = false)
         {
             SERVER = smtpServer;
             PORT = smtpPort;
@@ -156,7 +156,7 @@ namespace Simple_Mail
         /// Instanciates a new Email Module based on Config Files and Application Type (Web or Desktop)
         /// </summary>
         /// <param name="type"></param>
-        public Email(ApplicationType type)
+        public Message(ApplicationType type)
         {
             switch (type)
             {
@@ -211,7 +211,7 @@ namespace Simple_Mail
 
         #region Private Members
 
-        private EmailType emailMessageType;
+        private MessageType emailMessageType;
         private string emailMessageHtml;
         private System.Net.Mail.SmtpClient SmtpServer;
         #endregion
@@ -222,22 +222,22 @@ namespace Simple_Mail
             return File.ReadAllText(path);
         }
 
-        private string GetEmailFilePath(EmailType type)
+        private string GetEmailFilePath(MessageType type)
         {
             emailMessageType = type;
 
             switch (type)
             {
-                case EmailType.Confirmation:
+                case MessageType.Confirmation:
                     emailMessageHtml = HTML_CONFIRMATION;
                     break;
-                case EmailType.Forgotten:
+                case MessageType.Forgotten:
                     emailMessageHtml = HTML_FORGOTEN;
                     break;
-                case EmailType.Welcome:
+                case MessageType.Welcome:
                     emailMessageHtml = HTML_WELCOME;
                     break;
-                case EmailType.Default:
+                case MessageType.Default:
                     emailMessageHtml = HTML_DEFAULT;
                     break;
                 default:
@@ -285,7 +285,7 @@ namespace Simple_Mail
         /// <param name="To">If customized, defines the TO field</param>
         /// <param name="ToName">If customized, defines the To name</param>
         /// <returns>Returns a KeyValuePair<bool,string> with success (true/false) and a message from the smtp server</returns>
-        public KeyValuePair<bool, string> SendMail(EmailType type, bool custom = false, string body = "", string To = "", string ToName = "New Member")
+        public KeyValuePair<bool, string> SendMail(MessageType type, bool custom = false, string body = "", string To = "", string ToName = "New Member")
         {
 
             if (SetupServer())

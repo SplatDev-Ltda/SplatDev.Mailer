@@ -1,5 +1,5 @@
 ﻿using Newtonsoft.Json;
-using Simple_Mail;
+using zuEuz.Smtp.Gun;
 using System;
 using System.Collections.Generic;
 using System.Web.Mvc;
@@ -19,7 +19,7 @@ namespace Simple_Email_Website.Controllers
         [HttpGet]
         public JsonResult SendEmail(string Email, string Message)
         {
-            Email _email = new Email(ApplicationType.Web);
+            Message _email = new Message(ApplicationType.Web);
             string defaultHtml = _email.HTML_CONFIRMATION;
             string body = defaultHtml
                 .Replace("*|EMAIL_PREVIEW|*", "This is a Simple Email")
@@ -31,7 +31,7 @@ namespace Simple_Email_Website.Controllers
                 .Replace("*|CURRENT_YEAR|*", DateTime.Now.Year.ToString());
 
 
-            KeyValuePair<bool, string> response = _email.SendMail(EmailType.Confirmation, true, body, Email);
+            KeyValuePair<bool, string> response = _email.SendMail(MessageType.Confirmation, true, body, Email);
 
             Response result = new Controllers.Response();
             result.Success = response.Key;
