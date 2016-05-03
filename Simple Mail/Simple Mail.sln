@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple Mail", "Simple Mail\Simple Mail.csproj", "{E1AA431D-4783-4247-9326-21FFC57027CA}"
 EndProject
@@ -11,6 +11,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		..\LICENSE = ..\LICENSE
 		Simple Mail\README.md = Simple Mail\README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dist", "dist", "{97D7C1D2-2E26-4E7D-9A8F-0F716C7A385A}"
+	ProjectSection(SolutionItems) = preProject
+		Simple Mail\dist\index.html = Simple Mail\dist\index.html
+		Simple Mail\dist\LICENSE = Simple Mail\dist\LICENSE
+		Simple Mail\dist\Newtonsoft.Json.dll = Simple Mail\dist\Newtonsoft.Json.dll
+		Simple Mail\dist\Newtonsoft.Json.xml = Simple Mail\dist\Newtonsoft.Json.xml
+		Simple Mail\dist\README.md = Simple Mail\dist\README.md
+		Simple Mail\dist\zuEuz.SimpleMailModule.dll = Simple Mail\dist\zuEuz.SimpleMailModule.dll
+		Simple Mail\dist\zuEuz.SimpleMailModule.dll.config = Simple Mail\dist\zuEuz.SimpleMailModule.dll.config
+		Simple Mail\dist\zuEuz.SimpleMailModule.pdb = Simple Mail\dist\zuEuz.SimpleMailModule.pdb
+		Simple Mail\dist\zuEuz.SimpleMailModule.XML = Simple Mail\dist\zuEuz.SimpleMailModule.XML
 	EndProjectSection
 EndProject
 Global
@@ -30,5 +43,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{97D7C1D2-2E26-4E7D-9A8F-0F716C7A385A} = {74052517-73EA-4978-8DDF-F28938749114}
 	EndGlobalSection
 EndGlobal
