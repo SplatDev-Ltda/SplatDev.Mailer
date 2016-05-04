@@ -6,11 +6,11 @@ c:\users\carlos.casalicchio\documents\visual studio 2015\Projects\Simple Mail\Si
 c:\users\carlos.casalicchio\documents\visual studio 2015\Projects\Simple Mail\Simple Mail\obj\Debug\Simple Mail.pdb
 c:\users\carlos.casalicchio\documents\visual studio 2015\Projects\Simple Mail\Simple Mail\bin\Debug\Newtonsoft.Json.dll
 c:\users\carlos.casalicchio\documents\visual studio 2015\Projects\Simple Mail\Simple Mail\bin\Debug\Newtonsoft.Json.xml
-C:\Users\Carlos.Casalicchio\Source\Repos\Smtp-Module\Simple Mail\Simple Mail\bin\Debug\zuEuz.SimpleMailModule.dll.config
-C:\Users\Carlos.Casalicchio\Source\Repos\Smtp-Module\Simple Mail\Simple Mail\bin\Debug\zuEuz.SimpleMailModule.dll
-C:\Users\Carlos.Casalicchio\Source\Repos\Smtp-Module\Simple Mail\Simple Mail\bin\Debug\zuEuz.SimpleMailModule.pdb
 C:\Users\Carlos.Casalicchio\Source\Repos\Smtp-Module\Simple Mail\Simple Mail\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Carlos.Casalicchio\Source\Repos\Smtp-Module\Simple Mail\Simple Mail\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Carlos.Casalicchio\Source\Repos\Smtp-Module\Simple Mail\Simple Mail\obj\Debug\Simple Mail.csprojResolveAssemblyReference.cache
-C:\Users\Carlos.Casalicchio\Source\Repos\Smtp-Module\Simple Mail\Simple Mail\obj\Debug\zuEuz.SimpleMailModule.dll
-C:\Users\Carlos.Casalicchio\Source\Repos\Smtp-Module\Simple Mail\Simple Mail\obj\Debug\zuEuz.SimpleMailModule.pdb
+C:\Users\Carlos.Casalicchio\Source\Repos\Smtp-Module\Simple Mail\Simple Mail\bin\Debug\zuEuz.Smtp.Gun.dll.config
+C:\Users\Carlos.Casalicchio\Source\Repos\Smtp-Module\Simple Mail\Simple Mail\bin\Debug\zuEuz.Smtp.Gun.dll
+C:\Users\Carlos.Casalicchio\Source\Repos\Smtp-Module\Simple Mail\Simple Mail\bin\Debug\zuEuz.Smtp.Gun.pdb
+C:\Users\Carlos.Casalicchio\Source\Repos\Smtp-Module\Simple Mail\Simple Mail\obj\Debug\zuEuz.Smtp.Gun.dll
+C:\Users\Carlos.Casalicchio\Source\Repos\Smtp-Module\Simple Mail\Simple Mail\obj\Debug\zuEuz.Smtp.Gun.pdb

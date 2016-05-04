@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Diagnostics;
 using System.IO;
 using System.Web.Hosting;
 
@@ -23,8 +24,8 @@ namespace zuEuz.Smtp.Gun
     /// </summary>
     public enum ApplicationType
     {
-        Desktop,
-        Web
+        Desktop = 0,
+        Web = 1
     }
     #endregion
 
@@ -135,6 +136,11 @@ namespace zuEuz.Smtp.Gun
 
         #region Constructors
         /// <summary>
+        /// Default Constructor, when you want to define each property manually
+        /// </summary>
+        /// <remarks>Remember to define the values for the Smtp server, and html message</remarks>
+        public Message() { }
+        /// <summary>
         /// Manually configures a Smtp Server Instance (when you do not want to use config files)
         /// </summary>
         /// <param name="smtpServer">The Uri for the smtp server</param>
@@ -158,53 +164,58 @@ namespace zuEuz.Smtp.Gun
         /// <param name="type"></param>
         public Message(ApplicationType type)
         {
-            switch (type)
+            try
             {
-                case ApplicationType.Desktop:
-                    HTML_CONFIRMATION_PATH = ConfigurationManager.AppSettings["email-html-confirmation"];
-                    HTML_WELCOME_PATH = ConfigurationManager.AppSettings["email-html-welcome"];
-                    HTML_FORGOTEN_PATH = ConfigurationManager.AppSettings["email-html-forgotten"];
-                    HTML_DEFAULT_PATH = ConfigurationManager.AppSettings["email-html-default"];
-                    HTML_SHARE_PATH = ConfigurationManager.AppSettings["email-html-share"];
-                    break;
-                case ApplicationType.Web:
-                    HTML_CONFIRMATION_PATH = HostingEnvironment.MapPath(ConfigurationManager.AppSettings["email-html-confirmation"]);
-                    HTML_WELCOME_PATH = HostingEnvironment.MapPath(ConfigurationManager.AppSettings["email-html-welcome"]);
-                    HTML_FORGOTEN_PATH = HostingEnvironment.MapPath(ConfigurationManager.AppSettings["email-html-forgotten"]);
-                    HTML_DEFAULT_PATH = HostingEnvironment.MapPath(ConfigurationManager.AppSettings["email-html-default"]);
-                    HTML_SHARE_PATH = HostingEnvironment.MapPath(ConfigurationManager.AppSettings["email-html-share"]);
-                    break;
-                default:
-                    break;
+                switch (type)
+                {
+                    case ApplicationType.Desktop:
+                        HTML_CONFIRMATION_PATH = ConfigurationManager.AppSettings["email-html-confirmation"];
+                        HTML_WELCOME_PATH = ConfigurationManager.AppSettings["email-html-welcome"];
+                        HTML_FORGOTEN_PATH = ConfigurationManager.AppSettings["email-html-forgotten"];
+                        HTML_DEFAULT_PATH = ConfigurationManager.AppSettings["email-html-default"];
+                        HTML_SHARE_PATH = ConfigurationManager.AppSettings["email-html-share"];
+                        break;
+                    case ApplicationType.Web:
+                        HTML_CONFIRMATION_PATH = HostingEnvironment.MapPath(ConfigurationManager.AppSettings["email-html-confirmation"]);
+                        HTML_WELCOME_PATH = HostingEnvironment.MapPath(ConfigurationManager.AppSettings["email-html-welcome"]);
+                        HTML_FORGOTEN_PATH = HostingEnvironment.MapPath(ConfigurationManager.AppSettings["email-html-forgotten"]);
+                        HTML_DEFAULT_PATH = HostingEnvironment.MapPath(ConfigurationManager.AppSettings["email-html-default"]);
+                        HTML_SHARE_PATH = HostingEnvironment.MapPath(ConfigurationManager.AppSettings["email-html-share"]);
+                        break;
+                    default:
+                        break;
+                }
+
+                HTML_CONFIRMATION = GetEmailHtml(HTML_CONFIRMATION_PATH);
+                HTML_WELCOME = GetEmailHtml(HTML_DEFAULT_PATH);
+                HTML_FORGOTEN = GetEmailHtml(HTML_FORGOTEN_PATH);
+                HTML_DEFAULT = GetEmailHtml(HTML_WELCOME_PATH);
+                HTML_SHARE = GetEmailHtml(HTML_SHARE_PATH);
+
+                WEBSITE_NAME = ConfigurationManager.AppSettings["WebsiteName"];
+
+                SITE_ADMIN = ConfigurationManager.AppSettings["siteadmin"];
+
+                SERVER = ConfigurationManager.AppSettings["email-server"];
+                PORT = int.Parse(ConfigurationManager.AppSettings["email-port"]);
+                USESSL = bool.Parse(ConfigurationManager.AppSettings["useSSL"]);
+                PASSWORD = ConfigurationManager.AppSettings["email-password"];
+                USERNAME = ConfigurationManager.AppSettings["email-username"];
+                REQUIREAUTH = bool.Parse(ConfigurationManager.AppSettings["email-require-auth"]);
+
+                TO_NAME = "New " + ConfigurationManager.AppSettings["WebsiteName"] + " Member";
+                TO = ConfigurationManager.AppSettings["email-to"];
+                FROM_NAME = ConfigurationManager.AppSettings["email-from-name"];
+                FROM = ConfigurationManager.AppSettings["email-from"];
+
+                SUBJECT = ConfigurationManager.AppSettings["email-subject"];
             }
-
-
-            HTML_CONFIRMATION = GetEmailHtml(HTML_CONFIRMATION_PATH);
-            HTML_WELCOME = GetEmailHtml(HTML_DEFAULT_PATH);
-            HTML_FORGOTEN = GetEmailHtml(HTML_FORGOTEN_PATH);
-            HTML_DEFAULT = GetEmailHtml(HTML_WELCOME_PATH);
-            HTML_SHARE = GetEmailHtml(HTML_SHARE_PATH);
-
-
-            WEBSITE_NAME = ConfigurationManager.AppSettings["WebsiteName"];
-
-            SITE_ADMIN = ConfigurationManager.AppSettings["siteadmin"];
-
-            SERVER = ConfigurationManager.AppSettings["email-server"];
-            PORT = int.Parse(ConfigurationManager.AppSettings["email-port"]);
-            USESSL = bool.Parse(ConfigurationManager.AppSettings["useSSL"]);
-            PASSWORD = ConfigurationManager.AppSettings["email-password"];
-            USERNAME = ConfigurationManager.AppSettings["email-username"];
-            REQUIREAUTH = bool.Parse(ConfigurationManager.AppSettings["email-require-auth"]);
-
-            TO_NAME = "New " + ConfigurationManager.AppSettings["WebsiteName"] + " Member";
-            TO = ConfigurationManager.AppSettings["email-to"];
-            FROM_NAME = ConfigurationManager.AppSettings["email-from-name"];
-            FROM = ConfigurationManager.AppSettings["email-from"];
-
-            SUBJECT = ConfigurationManager.AppSettings["email-subject"];
-
-
+            catch (Exception ex)
+            {
+                //ignore but let user know
+                Debug.WriteLine(ex.Message);
+                Debug.WriteLine(ex.StackTrace);
+            }
         }
 
         #endregion
@@ -284,7 +295,7 @@ namespace zuEuz.Smtp.Gun
         /// <param name="body">If customized, set the html body for the email</param>
         /// <param name="To">If customized, defines the TO field</param>
         /// <param name="ToName">If customized, defines the To name</param>
-        /// <returns>Returns a KeyValuePair<bool,string> with success (true/false) and a message from the smtp server</returns>
+        /// <returns>Returns a KeyValuePair(bool,string) with success (true/false) and a message from the smtp server</returns>
         public KeyValuePair<bool, string> SendMail(MessageType type, bool custom = false, string body = "", string To = "", string ToName = "New Member")
         {
 
@@ -327,6 +338,45 @@ namespace zuEuz.Smtp.Gun
 
         }
         /// <summary>
+        /// Configure Smtp Server
+        /// </summary>
+        /// <param name="serverUri"></param>
+        /// <param name="port"></param>
+        /// <param name="useSSL"></param>
+        /// <param name="username"></param>
+        /// <param name="password"></param>
+        /// <param name="requireAuth"></param>
+        public void ConfigureServer(string serverUri, int port, bool useSSL, string username = "", string password = "", bool requireAuth = false)
+        {
+            SERVER = serverUri;
+            PORT = port;
+            USESSL = useSSL;
+            USERNAME = username;
+            PASSWORD = password;
+            REQUIREAUTH = requireAuth;
+
+        }
+        /// <summary>
+        /// Configures the Email Sender
+        /// </summary>
+        /// <param name="from"></param>
+        /// <param name="fromName"></param>
+        public void ConfigureEmailSender(string from, string fromName)
+        {
+            FROM = from;
+            FROM_NAME = fromName;
+        }
+        /// <summary>
+        /// Configures the Email Message
+        /// </summary>
+        /// <param name="subject"></param>
+        /// <param name="body"></param>
+        public void ConfigureEmailMessage(string subject, string body)
+        {
+            SUBJECT = subject;
+            BODY = body;
+        }
+        /// <summary>
         /// Manually Sets the Body for the Email Message
         /// </summary>
         /// <param name="message">The Html Body for the Email</param>
@@ -336,6 +386,6 @@ namespace zuEuz.Smtp.Gun
         }
         #endregion
 
-    } 
+    }
     #endregion
 }

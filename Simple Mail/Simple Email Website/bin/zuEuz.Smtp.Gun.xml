@@ -135,6 +135,12 @@
             Path for the Social Share Html File
             </summary>
         </member>
+        <member name="M:zuEuz.Smtp.Gun.Message.#ctor">
+            <summary>
+            Default Constructor, when you want to define each property manually
+            </summary>
+            <remarks>Remember to define the values for the Smtp server, and html message</remarks>
+        </member>
         <member name="M:zuEuz.Smtp.Gun.Message.#ctor(System.String,System.Int32,System.Boolean,System.String,System.String,System.Boolean)">
             <summary>
             Manually configures a Smtp Server Instance (when you do not want to use config files)
